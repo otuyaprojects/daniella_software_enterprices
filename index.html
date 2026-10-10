@@ -1,3219 +1,2921 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Daniella Software Enterprises | Digital Excellence</title>
 
-    <meta
-        name="description"
-        content="Daniella Software Enterprises creates intelligent software, enterprise systems, digital products, SaaS platforms and technology solutions for ambitious organizations."
-    >
+    <meta name="description" content="Daniella Software Enterprises designs and develops custom software, business systems, web applications and digital products for ambitious organizations.">
 
-    <meta
-        name="keywords"
-        content="Daniella Software Enterprises, software company, software development, web development, SaaS, business systems, digital products, enterprise software, Nigeria"
-    >
-
-    <meta
-        name="author"
-        content="Daniella Software Enterprises"
-    >
-
-    <meta
-        name="theme-color"
-        content="#ffffff"
-    >
-
-    <title>
-        Daniella Software Enterprises | Software • Innovation • Digital
-    </title>
+    <meta name="theme-color" content="#ffffff">
+    <meta name="author" content="Daniella Software Enterprises">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link rel="preload" as="image" href="images/hero.jpg">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <style>
+        /* =========================================
+           FOUNDATION
+        ========================================= */
 
+        :root {
+            --navy: #101d36;
+            --navy-light: #1a2b49;
+            --blue: #3658d4;
+            --blue-light: #edf2ff;
+            --gold: #c7a66a;
+            --gold-light: #f5eddd;
+            --white: #ffffff;
+            --surface: #f7f8fa;
+            --surface-dark: #eef0f4;
+            --text: #263248;
+            --muted: #768095;
+            --border: #e5e8ef;
+            --radius: 20px;
+            --radius-lg: 30px;
+            --container: 1200px;
+            --shadow: 0 20px 65px rgba(16,29,54,.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            line-height: 1.15;
+            letter-spacing: -.045em;
+        }
+
+        h1 { font-size: clamp(3rem, 6vw, 5.5rem); }
+        h2 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); }
+        h3 { font-size: 1.35rem; }
+
+        p { color: var(--muted); }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input, textarea, select {
+            font: inherit;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 4px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            width: min(var(--container), calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        .section {
+            padding: 115px 0;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--blue);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 48px;
+        }
+
+        .section-heading h2 {
+            margin: 17px 0;
+        }
+
+        .section-heading h2 span,
+        .accent {
+            color: var(--blue);
+        }
+
+        .section-heading > p {
+            max-width: 580px;
+            font-size: 1.04rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            min-height: 54px;
+            padding: 0 23px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: .88rem;
+            transition: .25s ease;
+            cursor: pointer;
+        }
+
+        .button-primary {
+            color: white;
+            background: var(--blue);
+            box-shadow: 0 8px 22px rgba(54,88,212,.18);
+        }
+
+        .button-primary:hover {
+            background: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        .button-outline {
+            border-color: var(--border);
+            background: white;
+            color: var(--navy);
+        }
+
+        .button-outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .arrow {
+            font-size: 1.15rem;
+            transition: transform .25s;
+        }
+
+        a:hover .arrow,
+        button:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .icon {
+            width: 27px;
+            height: 27px;
+            flex: 0 0 auto;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* =========================================
+           ANNOUNCEMENT
+        ========================================= */
+
+        .announcement {
+            background: var(--navy);
+            color: rgba(255,255,255,.8);
+            padding: 9px 20px;
+            font-size: .75rem;
+            text-align: center;
+        }
+
+        .announcement strong {
+            color: #e7cb93;
+        }
+
+        .announcement a {
+            margin-left: 10px;
+            color: white;
+            font-weight: 700;
+        }
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.94);
+            border-bottom: 1px solid rgba(229,232,239,.8);
+            backdrop-filter: blur(18px);
+        }
+
+        .navbar {
+            min-height: 86px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .brand-mark {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: var(--navy);
+            border-radius: 12px;
+            font-family: "Manrope", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: -.08em;
+        }
+
+        .brand-mark span {
+            color: #e5c58b;
+        }
+
+        .brand-name {
+            display: block;
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: .88rem;
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: .02em;
+        }
+
+        .brand-name small {
+            display: block;
+            color: var(--muted);
+            font-size: .61rem;
+            letter-spacing: .13em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #526077;
+            font-size: .83rem;
+            font-weight: 600;
+            transition: color .2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -9px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--blue);
+            transition: width .2s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-button {
+            display: none;
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 10px;
+            color: var(--navy);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            position: relative;
+            min-height: 690px;
+            display: flex;
+            align-items: center;
+            isolation: isolate;
+            overflow: hidden;
+            background: var(--navy);
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+        }
+
+        .hero-background img {
+            object-position: center 38%;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(90deg,
+                    rgba(10,22,43,.97) 0%,
+                    rgba(10,22,43,.88) 38%,
+                    rgba(10,22,43,.46) 70%,
+                    rgba(10,22,43,.2) 100%),
+                linear-gradient(0deg, rgba(10,22,43,.5), transparent 45%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            opacity: .09;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+            background-size: 68px 68px;
+            mask-image: linear-gradient(90deg, black, transparent 85%);
+        }
+
+        .hero-content {
+            max-width: 780px;
+            padding-top: 90px;
+            padding-bottom: 95px;
+        }
+
+        .hero .eyebrow {
+            color: #e9cf9b;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 24px 0;
+            color: white;
+            font-size: clamp(3.1rem, 6.4vw, 5.7rem);
+            line-height: 1.04;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #dfc28b;
+        }
+
+        .hero-description {
+            max-width: 570px;
+            color: rgba(255,255,255,.75);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .hero .button-outline {
+            color: white;
+            background: rgba(255,255,255,.07);
+            border-color: rgba(255,255,255,.25);
+        }
+
+        .hero .button-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .hero-proof {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 54px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,.17);
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: .82rem;
+            font-weight: 600;
+        }
+
+        .proof-icon {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: rgba(255,255,255,.1);
+            color: #e5c58b;
+        }
+
+        .hero-note {
+            position: absolute;
+            right: 6%;
+            bottom: 10%;
+            max-width: 250px;
+            padding: 22px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 16px;
+            background: rgba(16,29,54,.6);
+            backdrop-filter: blur(14px);
+        }
+
+        .hero-note strong {
+            display: block;
+            margin-bottom: 7px;
+            color: white;
+            font-family: "Manrope", sans-serif;
+            font-size: 1.15rem;
+        }
+
+        .hero-note p {
+            color: rgba(255,255,255,.7);
+            font-size: .8rem;
+        }
+
+        /* =========================================
+           TRUST STRIP
+        ========================================= */
+
+        .trust-strip {
+            padding: 29px 0;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        .trust-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .trust-label {
+            color: var(--muted);
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        .trust-tags {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 28px;
+            color: #667186;
+            font-family: "Manrope", sans-serif;
+            font-size: .77rem;
+            font-weight: 800;
+            letter-spacing: .07em;
+        }
+
+        /* =========================================
+           INTRODUCTION
+        ========================================= */
+
+        .intro-layout {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .intro-copy h2 {
+            margin: 19px 0;
+        }
+
+        .intro-copy > p {
+            max-width: 550px;
+            font-size: 1.02rem;
+        }
+
+        .intro-note {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin-top: 28px;
+            padding-top: 23px;
+            border-top: 1px solid var(--border);
+        }
+
+        .intro-note .icon {
+            color: var(--blue);
+        }
+
+        .intro-note strong {
+            display: block;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .intro-note p {
+            font-size: .87rem;
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .principle {
+            min-height: 205px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: white;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .principle:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .principle:nth-child(2),
+        .principle:nth-child(3) {
+            background: var(--surface);
+        }
+
+        .principle-number {
+            color: var(--gold);
+            font-size: .8rem;
+            font-weight: 800;
+        }
+
+        .principle h3 {
+            margin: 22px 0 10px;
+        }
+
+        .principle p {
+            font-size: .85rem;
+        }
+
+        /* =========================================
+           SERVICES
+        ========================================= */
+
+        .services {
+            background: var(--surface);
+        }
+
+        .services-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .services-header .section-heading {
+            margin-bottom: 48px;
+        }
+
+        .services-header > p {
+            max-width: 310px;
+            margin-bottom: 51px;
+            font-size: .91rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px;
+        }
+
+        .service-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 370px;
+            padding: 28px 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: white;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-card.featured {
+            color: white;
+            background: var(--navy);
+            border-color: var(--navy);
+        }
+
+        .service-card.featured h3 {
+            color: white;
+        }
+
+        .service-card.featured p,
+        .service-card.featured li {
+            color: rgba(255,255,255,.7);
+        }
+
+        .service-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-icon {
+            display: grid;
+            place-items: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            background: var(--blue-light);
+            color: var(--blue);
+        }
+
+        .featured .service-icon {
+            background: rgba(255,255,255,.1);
+            color: #e5c58b;
+        }
+
+        .service-index {
+            color: #9ba4b5;
+            font-size: .78rem;
+            font-weight: 800;
+        }
+
+        .service-card h3 {
+            margin: 27px 0 12px;
+        }
+
+        .service-card > p {
+            font-size: .86rem;
+        }
+
+        .service-card ul {
+            display: grid;
+            gap: 9px;
+            margin-top: 20px;
+            padding-top: 17px;
+            border-top: 1px solid var(--border);
+            list-style: none;
+        }
+
+        .featured ul {
+            border-color: rgba(255,255,255,.14);
+        }
+
+        .service-card li {
+            color: #657087;
+            font-size: .79rem;
+        }
+
+        .service-card li::before {
+            content: "↗";
+            margin-right: 9px;
+            color: var(--gold);
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 23px;
+            color: var(--blue);
+            font-size: .82rem;
+            font-weight: 700;
+        }
+
+        .featured .service-link {
+            color: #e5c58b;
+        }
+
+        /* =========================================
+           CAPABILITIES
+        ========================================= */
+
+        .capabilities {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .capabilities-intro {
+            position: sticky;
+            top: 125px;
+        }
+
+        .capabilities-intro h2 {
+            margin: 20px 0;
+        }
+
+        .capabilities-intro > p {
+            margin-bottom: 25px;
+        }
+
+        .capability-list {
+            border-top: 1px solid var(--border);
+        }
+
+        .capability-item {
+            display: grid;
+            grid-template-columns: 48px 1fr 30px;
+            gap: 17px;
+            align-items: start;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .capability-number {
+            color: var(--gold);
+            font-weight: 800;
+            font-size: .83rem;
+        }
+
+        .capability-item h3 {
+            margin-bottom: 8px;
+            font-size: 1.12rem;
+        }
+
+        .capability-item p {
+            font-size: .88rem;
+        }
+
+        .capability-item .icon {
+            width: 21px;
+            color: var(--blue);
+        }
+
+        /* =========================================
+           PROJECTS
+        ========================================= */
+
+        .projects {
+            background: #f8f9fc;
+        }
+
+        .projects-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 25px;
+        }
+
+        .projects-top .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .project-card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: white;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-visual {
+            position: relative;
+            height: 300px;
+            padding: 24px;
+            overflow: hidden;
+            background: #e8edfb;
+        }
+
+        .project-visual img {
+            position: absolute;
+            inset: 0;
+            transition: transform .5s;
+        }
+
+        .project-card:hover .project-visual img {
+            transform: scale(1.04);
+        }
+
+        .project-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(16,29,54,.48), transparent 65%);
+        }
+
+        .project-category {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            padding: 8px 12px;
+            border: 1px solid rgba(255,255,255,.45);
+            border-radius: 6px;
+            background: rgba(16,29,54,.45);
+            color: white;
+            font-size: .68rem;
+            font-weight: 800;
+            letter-spacing: .12em;
+        }
+
+        .project-content {
+            padding: 27px;
+        }
+
+        .project-content h3 {
+            margin: 9px 0 12px;
+            font-size: 1.5rem;
+        }
+
+        .project-content > p {
+            font-size: .9rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .project-tags span {
+            padding: 6px 10px;
+            border-radius: 5px;
+            background: var(--surface);
+            color: #5e6b82;
+            font-size: .73rem;
+            font-weight: 600;
+        }
+
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 24px;
+            padding-top: 19px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-footer small {
+            color: var(--muted);
+        }
+
+        .project-footer a {
+            color: var(--blue);
+            font-size: .83rem;
+            font-weight: 700;
+        }
+
+        .project-placeholder {
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle at 70% 20%, rgba(199,166,106,.32), transparent 35%),
+                linear-gradient(140deg, #142744, #3658d4);
+        }
+
+        .project-placeholder .mock-window {
+            position: relative;
+            z-index: 1;
+            width: 85%;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 12px;
+            background: rgba(255,255,255,.94);
+            box-shadow: 0 20px 45px rgba(0,0,0,.2);
+        }
+
+        .mock-top {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 14px;
+        }
+
+        .mock-top span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #d4d9e5;
+        }
+
+        .mock-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 9px;
+        }
+
+        .mock-box {
+            min-height: 44px;
+            border-radius: 6px;
+            background: #edf1fb;
+        }
+
+        .mock-box.tall {
+            grid-column: span 3;
+            min-height: 70px;
+            background: linear-gradient(90deg, #e6ecff, #f4e9d4);
+        }
+
+        /* =========================================
+           INDUSTRIES
+        ========================================= */
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .industry-card {
+            padding: 29px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: white;
+            transition: .25s;
+        }
+
+        .industry-card:hover {
+            border-color: #cbd5fa;
+            background: #fbfcff;
+            transform: translateY(-4px);
+        }
+
+        .industry-icon {
+            display: grid;
+            place-items: center;
+            width: 49px;
+            height: 49px;
+            margin-bottom: 23px;
+            border-radius: 13px;
+            background: var(--blue-light);
+            color: var(--blue);
+        }
+
+        .industry-card h3 {
+            margin-bottom: 11px;
+        }
+
+        .industry-card p {
+            font-size: .87rem;
+        }
+
+        .industry-card a {
+            display: inline-block;
+            margin-top: 19px;
+            color: var(--blue);
+            font-size: .81rem;
+            font-weight: 700;
+        }
+
+        /* =========================================
+           COMPANY
+        ========================================= */
+
+        .company {
+            padding: 100px 0;
+            background: var(--navy);
+            color: white;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 85px;
+            align-items: center;
+        }
+
+        .company-visual {
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            background: #263956;
+        }
+
+        .company-visual img {
+            position: absolute;
+            inset: 0;
+        }
+
+        .company-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(10,22,43,.65), transparent 65%);
+        }
+
+        .company-caption {
+            position: absolute;
+            z-index: 1;
+            right: 20px;
+            bottom: 20px;
+            left: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 13px;
+            background: rgba(16,29,54,.72);
+            backdrop-filter: blur(10px);
+        }
+
+        .company-caption strong {
+            color: white;
+        }
+
+        .company-caption p {
+            margin-top: 5px;
+            color: rgba(255,255,255,.7);
+            font-size: .83rem;
+        }
+
+        .company .eyebrow {
+            color: #e5c58b;
+        }
+
+        .company h2 {
+            margin: 20px 0;
+            color: white;
+        }
+
+        .company h2 span {
+            color: #dfc28b;
+        }
+
+        .company-copy > p {
+            margin-bottom: 16px;
+            color: rgba(255,255,255,.7);
+        }
+
+        .company-values {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .company-value {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            color: white;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .company-value .icon {
+            color: #e5c58b;
+        }
+
+        /* =========================================
+           PROCESS
+        ========================================= */
+
+        .process {
+            background: var(--surface);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px;
+        }
+
+        .process-card {
+            position: relative;
+            min-height: 235px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: white;
+        }
+
+        .process-card > span {
+            display: inline-grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 26px;
+            border-radius: 10px;
+            background: var(--navy);
+            color: white;
+            font-size: .82rem;
+            font-weight: 800;
+        }
+
+        .process-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            font-size: .84rem;
+        }
+
+        /* =========================================
+           TECHNOLOGY
+        ========================================= */
+
+        .technology-layout {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .technology-layout h2 {
+            margin: 20px 0;
+        }
+
+        .technology-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 11px;
+        }
+
+        .technology-item {
+            display: grid;
+            place-items: center;
+            min-height: 90px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--navy);
+            background: white;
+            font-size: .79rem;
+            font-weight: 700;
+            text-align: center;
+            transition: .2s;
+        }
+
+        .technology-item:hover {
+            border-color: #cbd5fa;
+            background: var(--blue-light);
+            color: var(--blue);
+        }
+
+        /* =========================================
+           TESTIMONIAL / TRUST NOTE
+        ========================================= */
+
+        .quality-band {
+            padding: 65px 0;
+            background: var(--gold-light);
+        }
+
+        .quality-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .quality-inner h2 {
+            max-width: 650px;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .quality-inner p {
+            max-width: 360px;
+            font-size: .92rem;
+        }
+
+        /* =========================================
+           FAQ
+        ========================================= */
+
+        .faq-layout {
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .faq-heading h2 {
+            margin: 20px 0;
+        }
+
+        .faq-list {
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-list details {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-list summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 22px 0;
+            color: var(--navy);
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-list summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-list summary span {
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--blue-light);
+            color: var(--blue);
+            font-size: 1.1rem;
+            transition: transform .2s;
+        }
+
+        .faq-list details[open] summary span {
+            transform: rotate(45deg);
+        }
+
+        .faq-list details p {
+            max-width: 650px;
+            padding: 0 40px 23px 0;
+            font-size: .9rem;
+        }
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+            background: var(--navy);
+            isolation: isolate;
+        }
+
+        .contact::before {
+            content: "DS";
+            position: absolute;
+            z-index: -1;
+            right: -20px;
+            bottom: -140px;
+            color: rgba(255,255,255,.035);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(18rem, 35vw, 35rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -.12em;
+        }
+
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .contact .eyebrow {
+            color: #e5c58b;
+        }
+
+        .contact h2 {
+            margin: 22px 0;
+            color: white;
+        }
+
+        .contact h2 span {
+            color: #dfc28b;
+        }
+
+        .contact-copy > p {
+            max-width: 560px;
+            color: rgba(255,255,255,.7);
+        }
+
+        .contact-links {
+            display: grid;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            color: white;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .contact-link .icon {
+            color: #e5c58b;
+        }
+
+        .contact-form {
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,.06);
+            backdrop-filter: blur(12px);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .contact-form > p {
+            margin-bottom: 23px;
+            color: rgba(255,255,255,.65);
+            font-size: .85rem;
+        }
+
+        .form-field {
+            margin-bottom: 15px;
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 7px;
+            color: rgba(255,255,255,.85);
+            font-size: .78rem;
+            font-weight: 600;
+        }
+
+        .form-field input,
+        .form-field textarea,
+        .form-field select {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 14px;
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 8px;
+            background: rgba(255,255,255,.08);
+            color: white;
+            outline: none;
+        }
+
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: rgba(255,255,255,.45);
+        }
+
+        .form-field select option {
+            color: var(--navy);
+        }
+
+        .form-field textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .contact-form .button {
+            width: 100%;
+        }
+
+        .form-note {
+            display: block;
+            margin-top: 12px;
+            color: rgba(255,255,255,.5);
+            font-size: .72rem;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            padding: 65px 0 24px;
+            background: #0b1529;
+            color: white;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+            padding-bottom: 50px;
+        }
+
+        .footer .brand-name {
+            color: white;
+        }
+
+        .footer .brand-name small {
+            color: rgba(255,255,255,.55);
+        }
+
+        .footer-brand > p {
+            max-width: 280px;
+            margin-top: 22px;
+            color: rgba(255,255,255,.6);
+            font-size: .9rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .footer-socials a {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 9px;
+            color: white;
+            font-size: .75rem;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .footer-socials a:hover {
+            border-color: #e5c58b;
+            color: #e5c58b;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: .87rem;
+            letter-spacing: 0;
+        }
+
+        .footer-links a {
+            display: block;
+            margin-bottom: 12px;
+            color: rgba(255,255,255,.58);
+            font-size: .8rem;
+            transition: color .2s;
+        }
+
+        .footer-links a:hover {
+            color: #e5c58b;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-top: 23px;
+            border-top: 1px solid rgba(255,255,255,.12);
+            color: rgba(255,255,255,.5);
+            font-size: .75rem;
+        }
+
+        .footer-bottom a {
+            color: white;
+        }
+
+        /* =========================================
+           REVEAL ANIMATIONS
+        ========================================= */
+
+        .js-ready .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .js-ready .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 1050px) {
+            .nav-links { gap: 17px; }
+            .nav-links a { font-size: .78rem; }
+            .navbar > .button { padding-inline: 15px; }
+            .service-grid { grid-template-columns: repeat(2, 1fr); }
+            .intro-layout,
+            .company-grid,
+            .contact-inner { gap: 45px; }
+            .hero-note { right: 3%; }
+            .capabilities { gap: 50px; }
+        }
+
+        @media (max-width: 820px) {
+            .section { padding: 80px 0; }
+
+            .navbar { min-height: 76px; }
+            .menu-button { display: grid; place-items: center; }
+            .navbar > .button { display: none; }
+
+            .nav-links {
+                position: fixed;
+                top: 76px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 25px 24px;
+                background: white;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                transition: .2s;
+                overflow-y: auto;
+            }
+
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-links li { border-bottom: 1px solid var(--border); }
+            .nav-links a { display: block; padding: 17px 0; font-size: 1rem; }
+            .nav-links a::after { display: none; }
+
+            .hero { min-height: 680px; }
+            .hero-content { max-width: 700px; }
+            .hero-note { display: none; }
+
+            .intro-layout,
+            .company-grid,
+            .technology-layout,
+            .faq-layout,
+            .contact-inner,
+            .capabilities { grid-template-columns: 1fr; }
+
+            .intro-layout,
+            .company-grid { gap: 45px; }
+
+            .capabilities-intro { position: static; }
+
+            .projects-top,
+            .services-header { align-items: flex-start; flex-direction: column; }
+
+            .services-header > p { margin-top: -28px; margin-bottom: 35px; }
+
+            .industry-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .company-visual { min-height: 400px; }
+
+            .quality-inner { align-items: flex-start; flex-direction: column; gap: 20px; }
+
+            .footer-top { grid-template-columns: 1fr; gap: 45px; }
+        }
+
+        @media (max-width: 560px) {
+            .container { width: calc(100% - 36px); }
+            .section { padding: 66px 0; }
+
+            .announcement { font-size: .68rem; }
+            .announcement a { display: inline-block; }
+
+            .brand-mark { width: 41px; height: 41px; }
+            .brand-name { font-size: .78rem; }
+            .brand-name small { font-size: .55rem; }
+
+            .hero { min-height: 690px; }
+            .hero-background img { object-position: 60% center; }
+            .hero-overlay {
+                background: linear-gradient(90deg, rgba(10,22,43,.95), rgba(10,22,43,.74));
+            }
+
+            .hero-content { padding-top: 70px; padding-bottom: 70px; }
+            .hero h1 { font-size: clamp(2.8rem, 12vw, 4.1rem); }
+            .hero-description { font-size: .95rem; }
+            .hero-proof { gap: 13px; margin-top: 38px; }
+            .proof-item { font-size: .74rem; }
+
+            .trust-inner { align-items: flex-start; flex-direction: column; }
+            .trust-tags { gap: 13px 20px; font-size: .7rem; }
+
+            .principles { gap: 11px; }
+            .principle { min-height: 190px; padding: 17px; }
+            .principle h3 { font-size: 1.08rem; margin-top: 18px; }
+            .principle p { font-size: .79rem; }
+
+            .service-grid,
+            .project-grid,
+            .industry-grid,
+            .process-grid { grid-template-columns: 1fr; }
+
+            .service-card { min-height: 330px; }
+
+            .project-visual { height: 245px; }
+            .project-content { padding: 22px; }
+
+            .company { padding: 70px 0; }
+            .company-visual { min-height: 340px; }
+
+            .technology-grid { grid-template-columns: repeat(3, 1fr); }
+            .technology-item { min-height: 75px; font-size: .72rem; }
+
+            .quality-band { padding: 50px 0; }
+
+            .contact { padding: 70px 0; }
+            .contact-form { padding: 22px; }
+
+            .footer-links { grid-template-columns: 1fr 1fr; }
+            .footer-bottom { align-items: flex-start; flex-direction: column; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .js-ready .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <!-- SVG icon library -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+        <symbol id="i-code" viewBox="0 0 24 24">
+            <path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/>
+        </symbol>
+        <symbol id="i-users" viewBox="0 0 24 24">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+            <path d="m9 12 2 2 4-4"/>
+        </symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24">
+            <path d="m12 2 9 5-9 5-9-5 9-5z"/>
+            <path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>
+        </symbol>
+        <symbol id="i-monitor" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+        </symbol>
+        <symbol id="i-database" viewBox="0 0 24 24">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+            <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+        </symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24">
+            <path d="M20 16.2A4.5 4.5 0 0 0 18 7.5 6 6 0 0 0 6.2 9 4 4 0 0 0 6 17h13"/>
+        </symbol>
+        <symbol id="i-graduation" viewBox="0 0 24 24">
+            <path d="m2 10 10-5 10 5-10 5-10-5z"/>
+            <path d="M6 12v5c4 3 8 3 12 0v-5M22 10v6"/>
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/>
+        </symbol>
+        <symbol id="i-cart" viewBox="0 0 24 24">
+            <path d="M3 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 8H6"/>
+            <circle cx="10" cy="21" r="1"/>
+            <circle cx="18" cy="21" r="1"/>
+        </symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24">
+            <path d="M3 6h12v12H3zM15 10h4l3 4v4h-7"/>
+            <circle cx="7.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+        </symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24">
+            <rect x="3" y="7" width="18" height="14" rx="2"/>
+            <path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/>
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+            <path d="m5 12 4 4L19 6"/>
+        </symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24">
+            <path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3z"/>
+            <path d="m19 14 1.2 2.8L23 18l-2.8 1.2L19 22l-1.2-2.8L15 18l2.8-1.2L19 14z"/>
+        </symbol>
+    </svg>
 
-<!-- =========================================================
-     PAGE LOADER / TOP BAR
-========================================================= -->
-
-<div class="page-loader">
-
-    <div class="loader-brand">
-        DS
+    <div class="announcement">
+        Thoughtful engineering. Meaningful outcomes.
+        <a href="#contact">Let's discuss your project ↗</a>
     </div>
 
-    <span>
-        Preparing digital experience...
-    </span>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar container" aria-label="Main navigation">
 
-</div>
+            <a class="brand" href="#home" aria-label="Daniella Software Enterprises home">
+                <span class="brand-mark">D<span>S</span></span>
+                <span class="brand-name">
+                    DANIELLA
+                    <small>SOFTWARE ENTERPRISES</small>
+                </span>
+            </a>
 
+            <ul class="nav-links" id="navLinks">
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Solutions</a></li>
+                <li><a href="#projects">Our Work</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-<!-- =========================================================
-     ANNOUNCEMENT BAR
-========================================================= -->
+            <a class="button button-primary" href="#contact">
+                Start a Project <span class="arrow">↗</span>
+            </a>
 
-<div class="announcement-bar">
+            <button class="menu-button" id="menuButton" type="button"
+                    aria-label="Open navigation" aria-expanded="false"
+                    aria-controls="navLinks">
+                ☰
+            </button>
 
-    <div class="announcement-content">
-
-        <span class="announcement-dot"></span>
-
-        <span>
-            Daniella Software Enterprises — Engineering the
-            digital infrastructure of tomorrow.
-        </span>
-
-        <a href="#contact">
-            Start a project →
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
-<header class="header">
-
-    <nav class="navbar">
-
-        <a
-            href="#home"
-            class="brand"
-            aria-label="Daniella Software Enterprises Home"
-        >
-
-            <span class="brand-symbol">
-                DS
-            </span>
-
-            <span class="brand-name">
-
-                DANIELLA
-
-                <small>
-                    SOFTWARE ENTERPRISES
-                </small>
-
-            </span>
-
-        </a>
-
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#home">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#solutions">
-                    Solutions
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="#industries">
-                    Industries
-                </a>
-            </li>
-
-            <li>
-                <a href="#company">
-                    Company
-                </a>
-            </li>
-
-            <li>
-                <a href="#contact">
-                    Contact
-                </a>
-            </li>
-
-        </ul>
-
-
-        <a
-            href="#contact"
-            class="header-button"
-        >
-
-            Work With Us
-
-            <span>
-                ↗
-            </span>
-
-        </a>
-
-
-        <button
-            class="menu-button"
-            type="button"
-            aria-label="Open navigation"
-        >
-
-            ☰
-
-        </button>
-
-    </nav>
-
-</header>
-
-
-
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
-<main>
-
-<!-- =========================================================
-     DANIELLA SOFTWARE ENTERPRISES — PREMIUM HERO
-========================================================= -->
-
-<section class="dse-hero" id="home">
-
-    <!-- Background image -->
-    <div class="dse-hero__background">
-        <img
-            src="images/hero.jpg"
-            alt="Daniella, CEO of Daniella Software Enterprises, in her office"
-        >
-    </div>
-
-    <!-- Readability overlay -->
-    <div class="dse-hero__overlay"></div>
-
-    <!-- Navigation -->
-    <header class="dse-header">
-
-        <a href="#home" class="dse-brand" aria-label="Daniella Software Enterprises home">
-
-            <span class="dse-brand__mark">
-                D<span>S</span>
-            </span>
-
-            <span class="dse-brand__name">
-                <strong>Daniella</strong>
-                <small>Software Enterprises</small>
-            </span>
-
-        </a>
-
-        <nav class="dse-nav" aria-label="Main navigation">
-            <a class="active" href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Our Work</a>
-            <a href="#contact">Contact</a>
         </nav>
-
-        <a href="#contact" class="dse-header__cta">
-            Get Started
-            <span>→</span>
-        </a>
-
     </header>
 
+    <main>
 
-    <!-- Main hero content -->
-    <div class="dse-hero__content">
+        <!-- HERO -->
+        <section class="hero" id="home">
 
-        <div class="dse-eyebrow">
-            <span>INNOVATION</span>
-            <i>/</i>
-            <span>TECHNOLOGY</span>
-            <i>/</i>
-            <span>IMPACT</span>
-        </div>
-
-        <h1>
-            Daniella Software
-            <span>Enterprises</span>
-        </h1>
-
-        <p class="dse-hero__description">
-            We build innovative software, digital platforms
-            and technology solutions that help businesses
-            grow, automate and thrive in the digital age.
-        </p>
-
-        <a href="#services" class="dse-primary-button">
-            Explore Our Solutions
-            <span>→</span>
-        </a>
-
-
-        <!-- Achievement statistics -->
-        <div class="dse-stats">
-
-            <div class="dse-stat">
-
-                <span class="dse-stat__icon">
-                    &lt;/&gt;
-                </span>
-
-                <div>
-                    <strong>50+</strong>
-                    <small>Projects Delivered</small>
-                </div>
-
+            <div class="hero-background">
+                <img src="images/hero.jpg"
+                     alt="Daniella in a professional technology workspace"
+                     fetchpriority="high">
             </div>
 
-            <div class="dse-stat">
-
-                <span class="dse-stat__icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                </span>
-
-                <div>
-                    <strong>20+</strong>
-                    <small>Happy Clients</small>
-                </div>
-
-            </div>
-
-            <div class="dse-stat">
-
-                <span class="dse-stat__icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
-                        <path d="m9 12 2 2 4-4"/>
-                    </svg>
-                </span>
-
-                <div>
-                    <strong>5+</strong>
-                    <small>Years Experience</small>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Slogan positioned over the right side -->
-    <aside class="dse-hero__slogan">
-
-        <p>
-            Turning Ideas<br>
-            into Powerful<br>
-            <strong>Digital Solutions</strong>
-        </p>
-
-        <span></span>
-
-    </aside>
-
-
-    <!-- Bottom foreground brand details -->
-    <div class="dse-hero__bottom">
-
-        <div class="dse-book-stack" aria-label="Software development, web applications and business solutions">
-
-            <div class="dse-book">
-                <span>SOFTWARE DEVELOPMENT</span>
-                <i></i>
-            </div>
-
-            <div class="dse-book">
-                <span>WEB APPLICATIONS</span>
-                <i></i>
-            </div>
-
-            <div class="dse-book">
-                <span>BUSINESS SOLUTIONS</span>
-                <i></i>
-            </div>
-
-        </div>
-
-        <div class="dse-brand-mug" aria-label="Daniella Software Enterprises branded mug">
-            <span>D<span>S</span></span>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================================================
-     TRUST BAR
-========================================================= -->
-
-<section class="trust-bar">
-
-    <div class="trust-content">
-
-        <span>
-            Trusted thinking for modern organizations
-        </span>
-
-        <div class="trust-items">
-
-            <span>
-                ENTERPRISE
-            </span>
-
-            <span>
-                FINTECH
-            </span>
-
-            <span>
-                EDTECH
-            </span>
-
-            <span>
-                HEALTH
-            </span>
-
-            <span>
-                COMMERCE
-            </span>
-
-            <span>
-                LOGISTICS
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     MARQUEE
-========================================================= -->
-
-<section class="marquee">
-
-    <div class="marquee-track">
-
-        <span>
-            SOFTWARE DEVELOPMENT
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-        <span>
-            DIGITAL PRODUCTS
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-        <span>
-            WEB APPLICATIONS
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-        <span>
-            BUSINESS SYSTEMS
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-        <span>
-            SAAS PLATFORMS
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-        <span>
-            ENTERPRISE TECHNOLOGY
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-        <span>
-            SOFTWARE DEVELOPMENT
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-        <span>
-            DIGITAL PRODUCTS
-        </span>
-
-        <b>
-            ✦
-        </b>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     INTRODUCTION
-========================================================= -->
-
-<section class="section introduction">
-
-    <div class="section-intro">
-
-        <div>
-
-            <span class="section-number">
-                01 / 10
-            </span>
-
-            <p class="section-label">
-                THE OPPORTUNITY
-            </p>
-
-        </div>
-
-
-        <h2>
-
-            Technology should make
-            <span>
-                business better.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            The best software doesn't simply look impressive.
-            It removes friction, creates opportunities,
-            organizes complexity and gives people better
-            ways to work.
-
-        </p>
-
-    </div>
-
-
-    <div class="introduction-grid">
-
-        <div class="intro-stat">
-
-            <strong>
-                01
-            </strong>
-
-            <span>
-                Understand
-            </span>
-
-            <p>
-                We start with the problem before choosing
-                the technology.
-            </p>
-
-        </div>
-
-
-        <div class="intro-stat">
-
-            <strong>
-                02
-            </strong>
-
-            <span>
-                Design
-            </span>
-
-            <p>
-                We turn complex requirements into clear
-                digital experiences.
-            </p>
-
-        </div>
-
-
-        <div class="intro-stat">
-
-            <strong>
-                03
-            </strong>
-
-            <span>
-                Engineer
-            </span>
-
-            <p>
-                We build reliable systems using modern
-                engineering practices.
-            </p>
-
-        </div>
-
-
-        <div class="intro-stat">
-
-            <strong>
-                04
-            </strong>
-
-            <span>
-                Scale
-            </span>
-
-            <p>
-                We prepare products for users, growth and
-                changing business needs.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SOLUTIONS
-========================================================= -->
-
-<section
-    class="section solutions"
-    id="solutions"
->
-
-    <div class="section-intro">
-
-        <div>
-
-            <span class="section-number">
-                02 / 10
-            </span>
-
-            <p class="section-label">
-                WHAT WE CREATE
-            </p>
-
-        </div>
-
-
-        <h2>
-
-            Technology that
-            <span>
-                solves.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            We don't build technology simply because
-            technology is possible. We build products
-            that solve meaningful problems.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="solutions-grid">
-
-
-        <article class="solution-card card-large">
-
-            <div class="solution-top">
-
-                <span>
-                    01
-                </span>
-
-                <span class="solution-arrow">
-                    ↗
-                </span>
-
-            </div>
-
-
-            <div class="solution-icon">
-                &lt;/&gt;
-            </div>
-
-
-            <h3>
-                Custom Software
-            </h3>
-
-
-            <p>
-
-                Software engineered around the exact
-                needs of your organization, team and
-                customers.
-
-            </p>
-
-
-            <ul class="solution-list">
-
-                <li>
-                    Business applications
-                </li>
-
-                <li>
-                    Internal platforms
-                </li>
-
-                <li>
-                    Workflow automation
-                </li>
-
-                <li>
-                    Custom dashboards
-                </li>
-
-            </ul>
-
-
-            <div class="card-line"></div>
-
-        </article>
-
-
-
-        <article class="solution-card purple-card">
-
-            <div class="solution-top">
-
-                <span>
-                    02
-                </span>
-
-                <span class="solution-arrow">
-                    ↗
-                </span>
-
-            </div>
-
-
-            <div class="solution-icon">
-                ◇
-            </div>
-
-
-            <h3>
-                Digital Products
-            </h3>
-
-
-            <p>
-
-                From idea to launch, we create digital
-                products people actually want to use.
-
-            </p>
-
-
-            <ul class="solution-list">
-
-                <li>
-                    Product strategy
-                </li>
-
-                <li>
-                    UX and interface systems
-                </li>
-
-                <li>
-                    MVP development
-                </li>
-
-                <li>
-                    Product optimization
-                </li>
-
-            </ul>
-
-
-            <div class="card-line"></div>
-
-        </article>
-
-
-
-        <article class="solution-card">
-
-            <div class="solution-top">
-
-                <span>
-                    03
-                </span>
-
-                <span class="solution-arrow">
-                    ↗
-                </span>
-
-            </div>
-
-
-            <div class="solution-icon">
-                ◎
-            </div>
-
-
-            <h3>
-                Business Systems
-            </h3>
-
-
-            <p>
-
-                Powerful platforms that make complex
-                business operations simpler.
-
-            </p>
-
-
-            <ul class="solution-list">
-
-                <li>
-                    ERP systems
-                </li>
-
-                <li>
-                    CRM platforms
-                </li>
-
-                <li>
-                    Management systems
-                </li>
-
-                <li>
-                    Reporting platforms
-                </li>
-
-            </ul>
-
-
-            <div class="card-line"></div>
-
-        </article>
-
-
-
-        <article class="solution-card">
-
-            <div class="solution-top">
-
-                <span>
-                    04
-                </span>
-
-                <span class="solution-arrow">
-                    ↗
-                </span>
-
-            </div>
-
-
-            <div class="solution-icon">
-                +
-            </div>
-
-
-            <h3>
-                SaaS Platforms
-            </h3>
-
-
-            <p>
-
-                Scalable cloud software built for
-                ambitious businesses.
-
-            </p>
-
-
-            <ul class="solution-list">
-
-                <li>
-                    Multi-user systems
-                </li>
-
-                <li>
-                    Subscription platforms
-                </li>
-
-                <li>
-                    Cloud architecture
-                </li>
-
-                <li>
-                    API ecosystems
-                </li>
-
-            </ul>
-
-
-            <div class="card-line"></div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SERVICES EXPANSION
-========================================================= -->
-
-<section class="section services-expansion">
-
-    <div class="section-heading-centered">
-
-        <span class="section-number">
-            ENGINEERING CAPABILITIES
-        </span>
-
-        <h2>
-
-            Everything required to
-            <span>
-                build seriously.
-            </span>
-
-        </h2>
-
-    </div>
-
-
-    <div class="capability-grid">
-
-        <article class="capability">
-
-            <span>
-                01
-            </span>
-
-            <h3>
-                Frontend Engineering
-            </h3>
-
-            <p>
-                Responsive interfaces and high-performance
-                web applications designed around users.
-            </p>
-
-        </article>
-
-
-        <article class="capability">
-
-            <span>
-                02
-            </span>
-
-            <h3>
-                Backend Engineering
-            </h3>
-
-            <p>
-                Secure APIs, databases, business logic
-                and scalable server-side infrastructure.
-            </p>
-
-        </article>
-
-
-        <article class="capability">
-
-            <span>
-                03
-            </span>
-
-            <h3>
-                API Development
-            </h3>
-
-            <p>
-                Reliable interfaces that allow systems,
-                applications and services to communicate.
-            </p>
-
-        </article>
-
-
-        <article class="capability">
-
-            <span>
-                04
-            </span>
-
-            <h3>
-                Cloud Architecture
-            </h3>
-
-            <p>
-                Infrastructure designed for availability,
-                scalability and efficient deployment.
-            </p>
-
-        </article>
-
-
-        <article class="capability">
-
-            <span>
-                05
-            </span>
-
-            <h3>
-                Database Systems
-            </h3>
-
-            <p>
-                Structured data architecture for applications
-                that depend on reliable information.
-            </p>
-
-        </article>
-
-
-        <article class="capability">
-
-            <span>
-                06
-            </span>
-
-            <h3>
-                Automation
-            </h3>
-
-            <p>
-                Intelligent workflows that reduce repetitive
-                work and improve operational efficiency.
-            </p>
-
-        </article>
-
-
-        <article class="capability">
-
-            <span>
-                07
-            </span>
-
-            <h3>
-                Security
-            </h3>
-
-            <p>
-                Security-conscious architecture across
-                applications, accounts and data.
-            </p>
-
-        </article>
-
-
-        <article class="capability">
-
-            <span>
-                08
-            </span>
-
-            <h3>
-                Maintenance
-            </h3>
-
-            <p>
-                Continuous improvement, monitoring and
-                technical support for evolving products.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PROJECTS
-========================================================= -->
-
-<section
-    class="section projects"
-    id="projects"
->
-
-    <div class="projects-heading">
-
-        <div>
-
-            <span class="section-number">
-                03 / 10
-            </span>
-
-            <p class="section-label">
-                SELECTED PROJECTS
-            </p>
-
-        </div>
-
-
-        <h2>
-
-            Work with
-            <span>
-                purpose.
-            </span>
-
-        </h2>
-
-    </div>
-
-
-
-    <div class="projects-list">
-
-
-        <article class="project">
-
-            <div class="project-number">
-                01
-            </div>
-
-
-            <div class="project-image project-image-one">
-
-                <span>
-                    ENTERPRISE
-                </span>
-
-            </div>
-
-
-            <div class="project-details">
-
-                <div>
-
-                    <p>
-                        BUSINESS TECHNOLOGY
+            <div class="hero-overlay"></div>
+            <div class="hero-grid"></div>
+
+            <div class="container">
+                <div class="hero-content">
+
+                    <span class="eyebrow">Software · Innovation · Digital</span>
+
+                    <h1>
+                        Turning ambitious ideas into
+                        <span>powerful software.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        We design and engineer digital products, intelligent
+                        business systems and modern applications that help
+                        organizations work smarter and move forward.
                     </p>
 
-                    <h3>
-                        Enterprise
-                        Management Platform
-                    </h3>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#contact">
+                            Let's Build Something
+                            <span class="arrow">↗</span>
+                        </a>
+
+                        <a class="button button-outline" href="#projects">
+                            Explore Our Work
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-proof">
+                        <div class="proof-item">
+                            <span class="proof-icon">
+                                <svg class="icon"><use href="#i-code"/></svg>
+                            </span>
+                            Purpose-built software
+                        </div>
+
+                        <div class="proof-item">
+                            <span class="proof-icon">
+                                <svg class="icon"><use href="#i-shield"/></svg>
+                            </span>
+                            Security-conscious engineering
+                        </div>
+
+                        <div class="proof-item">
+                            <span class="proof-icon">
+                                <svg class="icon"><use href="#i-spark"/></svg>
+                            </span>
+                            Designed for growth
+                        </div>
+                    </div>
 
                 </div>
+            </div>
 
+            <aside class="hero-note">
+                <strong>Ideas into infrastructure.</strong>
+                <p>Technology thoughtfully designed around the way your business works.</p>
+            </aside>
 
-                <p class="project-description">
+        </section>
 
-                    A unified platform helping businesses
-                    manage operations, teams, reporting
-                    and daily workflows.
+        <!-- INDUSTRY STRIP -->
+        <section class="trust-strip" aria-label="Industries served">
+            <div class="container trust-inner">
+                <span class="trust-label">Technology for diverse industries</span>
 
-                </p>
-
-
-                <div class="project-tags">
-
-                    <span>
-                        Web App
-                    </span>
-
-                    <span>
-                        Dashboard
-                    </span>
-
-                    <span>
-                        Analytics
-                    </span>
-
+                <div class="trust-tags">
+                    <span>EDUCATION</span>
+                    <span>FINANCE</span>
+                    <span>HEALTHCARE</span>
+                    <span>COMMERCE</span>
+                    <span>LOGISTICS</span>
+                    <span>ENTERPRISE</span>
                 </div>
-
-
-                <a href="#">
-                    View project ↗
-                </a>
-
             </div>
+        </section>
 
-        </article>
+        <!-- ABOUT / INTRODUCTION -->
+        <section class="section" id="about">
+            <div class="container intro-layout">
 
+                <div class="intro-copy reveal">
+                    <span class="eyebrow">A better way to build</span>
 
-
-        <article class="project">
-
-            <div class="project-number">
-                02
-            </div>
-
-
-            <div class="project-image project-image-two">
-
-                <span>
-                    FINTECH
-                </span>
-
-            </div>
-
-
-            <div class="project-details">
-
-                <div>
+                    <h2>
+                        Technology should make
+                        <span class="accent">business better.</span>
+                    </h2>
 
                     <p>
-                        FINANCIAL TECHNOLOGY
+                        Great software is more than a collection of features.
+                        It brings clarity to complicated processes, removes
+                        unnecessary friction and creates better experiences
+                        for the people who use it.
                     </p>
 
-                    <h3>
-                        Digital Finance
-                        Platform
-                    </h3>
-
+                    <div class="intro-note">
+                        <svg class="icon"><use href="#i-check"/></svg>
+                        <div>
+                            <strong>Problem first. Technology second.</strong>
+                            <p>We begin by understanding your objectives,
+                            users and operational challenges before deciding
+                            what to build.</p>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="principles reveal">
 
-                <p class="project-description">
+                    <article class="principle">
+                        <span class="principle-number">01 / DISCOVER</span>
+                        <h3>Understand</h3>
+                        <p>Get to the heart of the challenge and identify the opportunity.</p>
+                    </article>
 
-                    A modern financial platform designed
-                    to simplify digital transactions and
-                    financial management.
+                    <article class="principle">
+                        <span class="principle-number">02 / DESIGN</span>
+                        <h3>Imagine</h3>
+                        <p>Turn complex requirements into clear product experiences.</p>
+                    </article>
 
-                </p>
+                    <article class="principle">
+                        <span class="principle-number">03 / BUILD</span>
+                        <h3>Engineer</h3>
+                        <p>Develop dependable systems with maintainability in mind.</p>
+                    </article>
 
-
-                <div class="project-tags">
-
-                    <span>
-                        Fintech
-                    </span>
-
-                    <span>
-                        Payments
-                    </span>
-
-                    <span>
-                        Security
-                    </span>
+                    <article class="principle">
+                        <span class="principle-number">04 / EVOLVE</span>
+                        <h3>Improve</h3>
+                        <p>Prepare products to adapt as needs and opportunities change.</p>
+                    </article>
 
                 </div>
-
-
-                <a href="#">
-                    View project ↗
-                </a>
-
             </div>
+        </section>
 
-        </article>
+        <!-- SOLUTIONS -->
+        <section class="section services" id="services">
+            <div class="container">
 
+                <div class="services-header">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">What we do</span>
+                        <h2>Solutions engineered for <span>real impact.</span></h2>
+                        <p>From individual applications to connected business
+                        platforms, we turn operational needs into digital solutions.</p>
+                    </div>
 
+                    <p>Every engagement starts with your objectives and ends
+                    with a solution designed around a clear purpose.</p>
+                </div>
 
-        <article class="project">
+                <div class="service-grid">
 
-            <div class="project-number">
-                03
+                    <article class="service-card featured reveal">
+                        <div class="service-top">
+                            <span class="service-icon">
+                                <svg class="icon"><use href="#i-code"/></svg>
+                            </span>
+                            <span class="service-index">01</span>
+                        </div>
+
+                        <h3>Custom Software</h3>
+                        <p>Purpose-built applications tailored to your workflows,
+                        business rules and users.</p>
+
+                        <ul>
+                            <li>Business applications</li>
+                            <li>Custom dashboards</li>
+                            <li>Workflow automation</li>
+                            <li>Internal platforms</li>
+                        </ul>
+
+                        <a class="service-link" href="#contact">
+                            Discuss your needs <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-icon">
+                                <svg class="icon"><use href="#i-monitor"/></svg>
+                            </span>
+                            <span class="service-index">02</span>
+                        </div>
+
+                        <h3>Web Applications</h3>
+                        <p>Responsive digital experiences that make products
+                        and services accessible.</p>
+
+                        <ul>
+                            <li>Business websites</li>
+                            <li>Customer portals</li>
+                            <li>Interactive platforms</li>
+                            <li>Web application interfaces</li>
+                        </ul>
+
+                        <a class="service-link" href="#contact">
+                            Explore possibilities <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-icon">
+                                <svg class="icon"><use href="#i-layers"/></svg>
+                            </span>
+                            <span class="service-index">03</span>
+                        </div>
+
+                        <h3>Business Systems</h3>
+                        <p>Connected platforms that help teams organize,
+                        coordinate and manage operations.</p>
+
+                        <ul>
+                            <li>ERP and CRM systems</li>
+                            <li>School management</li>
+                            <li>Inventory and reporting</li>
+                            <li>Administrative workflows</li>
+                        </ul>
+
+                        <a class="service-link" href="#contact">
+                            Modernize operations <span>↗</span>
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-icon">
+                                <svg class="icon"><use href="#i-cloud"/></svg>
+                            </span>
+                            <span class="service-index">04</span>
+                        </div>
+
+                        <h3>SaaS & Integrations</h3>
+                        <p>Flexible software products and integrations that
+                        connect services and support growth.</p>
+
+                        <ul>
+                            <li>Subscription platforms</li>
+                            <li>API development</li>
+                            <li>Third-party integrations</li>
+                            <li>Cloud deployment</li>
+                        </ul>
+
+                        <a class="service-link" href="#contact">
+                            Plan your platform <span>↗</span>
+                        </a>
+                    </article>
+
+                </div>
             </div>
+        </section>
 
+        <!-- ENGINEERING CAPABILITIES -->
+        <section class="section">
+            <div class="container capabilities">
 
-            <div class="project-image project-image-three">
+                <div class="capabilities-intro reveal">
+                    <span class="eyebrow">Engineering capabilities</span>
+                    <h2>Every layer. <span class="accent">One clear purpose.</span></h2>
+                    <p>Good digital products depend on the details behind
+                    the interface as much as the experience in front of it.</p>
 
-                <span>
-                    EDTECH
-                </span>
+                    <a href="#contact" class="button button-primary">
+                        Discuss Your Requirements <span class="arrow">↗</span>
+                    </a>
+                </div>
 
+                <div class="capability-list">
+
+                    <article class="capability-item reveal">
+                        <span class="capability-number">01</span>
+                        <div>
+                            <h3>Frontend Development</h3>
+                            <p>Responsive, accessible interfaces with thoughtful
+                            interaction design and consistent visual systems.</p>
+                        </div>
+                        <svg class="icon"><use href="#i-monitor"/></svg>
+                    </article>
+
+                    <article class="capability-item reveal">
+                        <span class="capability-number">02</span>
+                        <div>
+                            <h3>Backend & API Engineering</h3>
+                            <p>Application logic, authentication, integrations
+                            and reliable communication between systems.</p>
+                        </div>
+                        <svg class="icon"><use href="#i-code"/></svg>
+                    </article>
+
+                    <article class="capability-item reveal">
+                        <span class="capability-number">03</span>
+                        <div>
+                            <h3>Database Architecture</h3>
+                            <p>Structured data models designed around integrity,
+                            efficient access and maintainable applications.</p>
+                        </div>
+                        <svg class="icon"><use href="#i-database"/></svg>
+                    </article>
+
+                    <article class="capability-item reveal">
+                        <span class="capability-number">04</span>
+                        <div>
+                            <h3>Automation & Integration</h3>
+                            <p>Connected workflows that reduce repetitive tasks
+                            and help information move between systems.</p>
+                        </div>
+                        <svg class="icon"><use href="#i-layers"/></svg>
+                    </article>
+
+                    <article class="capability-item reveal">
+                        <span class="capability-number">05</span>
+                        <div>
+                            <h3>Deployment & Maintenance</h3>
+                            <p>Practical release processes, ongoing improvements
+                            and support for changing business requirements.</p>
+                        </div>
+                        <svg class="icon"><use href="#i-cloud"/></svg>
+                    </article>
+
+                </div>
             </div>
+        </section>
 
+        <!-- PROJECTS -->
+        <section class="section projects" id="projects">
+            <div class="container">
 
-            <div class="project-details">
+                <div class="projects-top">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">Selected work</span>
+                        <h2>Ideas brought to <span>life.</span></h2>
+                        <p>Explore examples of the digital products and
+                        business platforms that can be created around
+                        real operational challenges.</p>
+                    </div>
 
-                <div>
+                    <a class="button button-outline" href="#contact">
+                        Build Your Project <span class="arrow">↗</span>
+                    </a>
+                </div>
+
+                <div class="project-grid">
+
+                    <article class="project-card reveal">
+                        <div class="project-visual project-placeholder">
+                            <div class="mock-window" aria-hidden="true">
+                                <div class="mock-top">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="mock-body">
+                                    <div class="mock-box"></div>
+                                    <div class="mock-box"></div>
+                                    <div class="mock-box"></div>
+                                    <div class="mock-box tall"></div>
+                                </div>
+                            </div>
+                            <span class="project-category">BUSINESS SYSTEMS</span>
+                        </div>
+
+                        <div class="project-content">
+                            <span class="eyebrow">Operations & management</span>
+                            <h3>Enterprise Management Platform</h3>
+                            <p>A centralized workspace for managing business
+                            operations, information, reporting and everyday tasks.</p>
+
+                            <div class="project-tags">
+                                <span>Web Application</span>
+                                <span>Dashboards</span>
+                                <span>Analytics</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <small>Illustrative project concept</small>
+                                <a href="#contact">Discuss a similar system ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-visual">
+                            <img src="images/project-finance.jpg"
+                                 alt="Financial technology application concept"
+                                 loading="lazy">
+                            <span class="project-category">FINTECH</span>
+                        </div>
+
+                        <div class="project-content">
+                            <span class="eyebrow">Financial technology</span>
+                            <h3>Digital Finance Platform</h3>
+                            <p>A concept for organizing financial information,
+                            transaction workflows and account activity.</p>
+
+                            <div class="project-tags">
+                                <span>Finance</span>
+                                <span>Reporting</span>
+                                <span>Security</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <small>Illustrative project concept</small>
+                                <a href="#contact">Discuss a similar system ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-visual">
+                            <img src="images/project-school.jpg"
+                                 alt="School administration and learning platform concept"
+                                 loading="lazy">
+                            <span class="project-category">EDTECH</span>
+                        </div>
+
+                        <div class="project-content">
+                            <span class="eyebrow">Education technology</span>
+                            <h3>School Management Platform</h3>
+                            <p>A connected school system concept for academic
+                            administration, student records and communication.</p>
+
+                            <div class="project-tags">
+                                <span>Education</span>
+                                <span>ERP</span>
+                                <span>Administration</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <small>Illustrative project concept</small>
+                                <a href="#contact">Discuss a similar system ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-visual">
+                            <img src="images/project-commerce.jpg"
+                                 alt="Digital commerce and online ordering concept"
+                                 loading="lazy">
+                            <span class="project-category">COMMERCE</span>
+                        </div>
+
+                        <div class="project-content">
+                            <span class="eyebrow">Digital commerce</span>
+                            <h3>Commerce Operations Platform</h3>
+                            <p>A commerce solution concept bringing products,
+                            orders, customer records and business workflows together.</p>
+
+                            <div class="project-tags">
+                                <span>E-commerce</span>
+                                <span>Inventory</span>
+                                <span>Integrations</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <small>Illustrative project concept</small>
+                                <a href="#contact">Discuss a similar system ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INDUSTRIES -->
+        <section class="section" id="industries">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Who we serve</span>
+                    <h2>Built around the realities of <span>your industry.</span></h2>
+                    <p>Every organization has its own processes, users and
+                    priorities. The right solution starts with understanding them.</p>
+                </div>
+
+                <div class="industry-grid">
+
+                    <article class="industry-card reveal">
+                        <span class="industry-icon">
+                            <svg class="icon"><use href="#i-graduation"/></svg>
+                        </span>
+                        <h3>Education</h3>
+                        <p>Student records, academic management, fee administration
+                        and communication platforms.</p>
+                        <a href="#contact">Explore education solutions →</a>
+                    </article>
+
+                    <article class="industry-card reveal">
+                        <span class="industry-icon">
+                            <svg class="icon"><use href="#i-shield"/></svg>
+                        </span>
+                        <h3>Financial Services</h3>
+                        <p>Financial workflows, reporting interfaces and
+                        systems designed with security in mind.</p>
+                        <a href="#contact">Explore finance solutions →</a>
+                    </article>
+
+                    <article class="industry-card reveal">
+                        <span class="industry-icon">
+                            <svg class="icon"><use href="#i-heart"/></svg>
+                        </span>
+                        <h3>Healthcare</h3>
+                        <p>Administrative systems, operational workflows and
+                        digital service experiences.</p>
+                        <a href="#contact">Explore healthcare solutions →</a>
+                    </article>
+
+                    <article class="industry-card reveal">
+                        <span class="industry-icon">
+                            <svg class="icon"><use href="#i-cart"/></svg>
+                        </span>
+                        <h3>Retail & Commerce</h3>
+                        <p>Product management, ordering, inventory and
+                        customer-facing digital experiences.</p>
+                        <a href="#contact">Explore commerce solutions →</a>
+                    </article>
+
+                    <article class="industry-card reveal">
+                        <span class="industry-icon">
+                            <svg class="icon"><use href="#i-truck"/></svg>
+                        </span>
+                        <h3>Logistics</h3>
+                        <p>Operational coordination, shipment workflows and
+                        tools that improve visibility.</p>
+                        <a href="#contact">Explore logistics solutions →</a>
+                    </article>
+
+                    <article class="industry-card reveal">
+                        <span class="industry-icon">
+                            <svg class="icon"><use href="#i-briefcase"/></svg>
+                        </span>
+                        <h3>Professional Services</h3>
+                        <p>Project coordination, client portals and
+                        internal tools for service-oriented teams.</p>
+                        <a href="#contact">Explore business solutions →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPANY STORY -->
+        <section class="company">
+            <div class="container company-grid">
+
+                <div class="company-visual reveal">
+                    <img src="images/about.jpg"
+                         alt="Daniella Software Enterprises professional workspace"
+                         loading="lazy">
+
+                    <div class="company-caption">
+                        <strong>Engineering with intention.</strong>
+                        <p>Thoughtful design. Reliable foundations. Useful outcomes.</p>
+                    </div>
+                </div>
+
+                <div class="company-copy reveal">
+                    <span class="eyebrow">The company</span>
+                    <h2>Technology with <span>purpose behind it.</span></h2>
 
                     <p>
-                        EDUCATION TECHNOLOGY
+                        Daniella Software Enterprises is a software and
+                        digital solutions brand focused on transforming
+                        ideas and business challenges into useful technology.
                     </p>
-
-                    <h3>
-                        School Management
-                        Platform
-                    </h3>
-
-                </div>
-
-
-                <p class="project-description">
-
-                    Connecting schools, administrators,
-                    teachers, students and parents
-                    through one digital ecosystem.
-
-                </p>
-
-
-                <div class="project-tags">
-
-                    <span>
-                        Education
-                    </span>
-
-                    <span>
-                        ERP
-                    </span>
-
-                    <span>
-                        Management
-                    </span>
-
-                </div>
-
-
-                <a href="#">
-                    View project ↗
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="project">
-
-            <div class="project-number">
-                04
-            </div>
-
-
-            <div class="project-image project-image-four">
-
-                <span>
-                    COMMERCE
-                </span>
-
-            </div>
-
-
-            <div class="project-details">
-
-                <div>
 
                     <p>
-                        DIGITAL COMMERCE
+                        Our approach combines product thinking, considered
+                        design and practical engineering to create solutions
+                        that fit the people and organizations they serve.
                     </p>
 
-                    <h3>
-                        Commerce
-                        Operations Platform
-                    </h3>
+                    <p>
+                        We believe good technology should be understandable,
+                        dependable and designed to evolve alongside the
+                        needs of the business.
+                    </p>
 
+                    <div class="company-values">
+                        <div class="company-value">
+                            <svg class="icon"><use href="#i-check"/></svg>
+                            Understand before building
+                        </div>
+                        <div class="company-value">
+                            <svg class="icon"><use href="#i-check"/></svg>
+                            Prioritize quality and usability
+                        </div>
+                        <div class="company-value">
+                            <svg class="icon"><use href="#i-check"/></svg>
+                            Design with long-term value in mind
+                        </div>
+                    </div>
                 </div>
 
+            </div>
+        </section>
 
-                <p class="project-description">
+        <!-- PROCESS -->
+        <section class="section process">
+            <div class="container">
 
-                    Digital infrastructure connecting products,
-                    customers, orders, payments and operations.
-
-                </p>
-
-
-                <div class="project-tags">
-
-                    <span>
-                        E-Commerce
-                    </span>
-
-                    <span>
-                        Operations
-                    </span>
-
-                    <span>
-                        API
-                    </span>
-
+                <div class="section-heading reveal">
+                    <span class="eyebrow">How we work</span>
+                    <h2>A clear path from concept to <span>launch.</span></h2>
+                    <p>A structured process makes decisions clearer, aligns
+                    expectations and helps teams focus on the right priorities.</p>
                 </div>
 
+                <div class="process-grid">
 
-                <a href="#">
-                    View project ↗
-                </a>
+                    <article class="process-card reveal">
+                        <span>01</span>
+                        <h3>Discover</h3>
+                        <p>Understand your business, users, requirements
+                        and desired outcomes.</p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <span>02</span>
+                        <h3>Plan & Design</h3>
+                        <p>Define scope, product structure, architecture
+                        and user experience.</p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <span>03</span>
+                        <h3>Build & Test</h3>
+                        <p>Develop the product and check its functionality,
+                        usability and reliability.</p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <span>04</span>
+                        <h3>Launch & Evolve</h3>
+                        <p>Deploy the solution and plan future improvements
+                        as needs change.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGY -->
+        <section class="section">
+            <div class="container technology-layout">
+
+                <div class="reveal">
+                    <span class="eyebrow">Our technology stack</span>
+                    <h2>The right tools for <span class="accent">the right job.</span></h2>
+                    <p>Technology choices should follow product requirements,
+                    performance needs and long-term maintenance considerations.</p>
+                </div>
+
+                <div class="technology-grid reveal">
+                    <div class="technology-item">HTML5</div>
+                    <div class="technology-item">CSS3</div>
+                    <div class="technology-item">JavaScript</div>
+                    <div class="technology-item">TypeScript</div>
+                    <div class="technology-item">React</div>
+                    <div class="technology-item">Next.js</div>
+                    <div class="technology-item">Python</div>
+                    <div class="technology-item">Django</div>
+                    <div class="technology-item">Node.js</div>
+                    <div class="technology-item">PostgreSQL</div>
+                    <div class="technology-item">MySQL</div>
+                    <div class="technology-item">REST APIs</div>
+                </div>
 
             </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     INDUSTRIES
-========================================================= -->
-
-<section
-    class="section industries"
-    id="industries"
->
-
-    <div class="section-intro">
-
-        <div>
-
-            <span class="section-number">
-                04 / 10
-            </span>
-
-            <p class="section-label">
-                INDUSTRIES
-            </p>
-
-        </div>
-
-
-        <h2>
-
-            Software for
-            <span>
-                real industries.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            Different industries have different problems.
-            Our approach is to understand the environment
-            before engineering the solution.
-
-        </p>
-
-    </div>
-
-
-    <div class="industry-grid">
-
-        <article>
-
-            <span>
-                01
-            </span>
-
-            <h3>
-                Financial Services
-            </h3>
-
-            <p>
-                Platforms for financial operations,
-                reporting and digital experiences.
-            </p>
-
-            <a href="#contact">
-                Explore →
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                02
-            </span>
-
-            <h3>
-                Education
-            </h3>
-
-            <p>
-                Digital ecosystems for schools,
-                institutions and education providers.
-            </p>
-
-            <a href="#contact">
-                Explore →
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                03
-            </span>
-
-            <h3>
-                Healthcare
-            </h3>
-
-            <p>
-                Technology supporting administration,
-                workflows and digital services.
-            </p>
-
-            <a href="#contact">
-                Explore →
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                04
-            </span>
-
-            <h3>
-                Retail & Commerce
-            </h3>
-
-            <p>
-                Systems connecting customers,
-                products, transactions and operations.
-            </p>
-
-            <a href="#contact">
-                Explore →
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                05
-            </span>
-
-            <h3>
-                Logistics
-            </h3>
-
-            <p>
-                Digital systems for tracking,
-                coordination and operational visibility.
-            </p>
-
-            <a href="#contact">
-                Explore →
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <span>
-                06
-            </span>
-
-            <h3>
-                Professional Services
-            </h3>
-
-            <p>
-                Platforms helping professional teams
-                manage clients, projects and workflows.
-            </p>
-
-            <a href="#contact">
-                Explore →
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     COMPANY
-========================================================= -->
-
-<section
-    class="company"
-    id="company"
->
-
-    <div class="company-image">
-
-        <img
-            src="images/about.jpg"
-            alt="Daniella Software Enterprises workspace"
-        >
-
-        <div class="company-image-number">
-            05
-        </div>
-
-    </div>
-
-
-    <div class="company-content">
-
-        <span class="section-number">
-            05 / 10
-        </span>
-
-        <p class="section-label">
-            THE COMPANY
-        </p>
-
-
-        <h2>
-
-            Different ideas.
-
-            <span>
-                Better technology.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            Daniella Software Enterprises is a technology
-            company focused on designing and developing
-            software that creates real-world value.
-
-        </p>
-
-
-        <p>
-
-            We bring together engineering, design and
-            strategic thinking to transform ideas into
-            dependable digital products.
-
-        </p>
-
-
-        <p>
-
-            Our philosophy is simple: understand the problem,
-            build with purpose and create technology that
-            remains useful long after launch.
-
-        </p>
-
-
-        <div class="company-values">
-
-            <div>
-
-                <span>
-                    01
-                </span>
-
-                <strong>
-                    Think differently
-                </strong>
-
+        </section>
+
+        <!-- QUALITY BAND -->
+        <section class="quality-band">
+            <div class="container quality-inner reveal">
+                <h2>Good software solves today's problems without losing sight of tomorrow.</h2>
+                <p>Let's create a digital solution around what your business
+                needs now and where you want it to go.</p>
             </div>
+        </section>
 
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container faq-layout">
 
-            <div>
+                <div class="faq-heading reveal">
+                    <span class="eyebrow">Frequently asked questions</span>
+                    <h2>Before we <span class="accent">begin.</span></h2>
+                    <p>Some useful answers to help you understand how a
+                    software engagement can work.</p>
+                </div>
 
-                <span>
-                    02
-                </span>
+                <div class="faq-list reveal">
 
-                <strong>
-                    Build intelligently
-                </strong>
+                    <details>
+                        <summary>What kinds of software can you develop?<span>+</span></summary>
+                        <p>Potential projects include custom web applications,
+                        business management systems, dashboards, APIs,
+                        educational platforms and SaaS products. Scope depends
+                        on the requirements of each engagement.</p>
+                    </details>
 
+                    <details>
+                        <summary>Can you build a product from an idea?<span>+</span></summary>
+                        <p>Yes. A project can begin with an initial concept.
+                        Discovery and planning help establish the intended
+                        users, essential features, scope and suitable
+                        implementation approach.</p>
+                    </details>
+
+                    <details>
+                        <summary>Can you improve an existing application?<span>+</span></summary>
+                        <p>Existing software may be suitable for redesign,
+                        new features, integrations, performance improvements
+                        or maintenance after its current condition and
+                        requirements have been assessed.</p>
+                    </details>
+
+                    <details>
+                        <summary>How much does a software project cost?<span>+</span></summary>
+                        <p>Cost depends on the scope, complexity, integrations,
+                        design requirements and delivery timeline. A clear
+                        brief helps establish a realistic estimate.</p>
+                    </details>
+
+                    <details>
+                        <summary>Do you provide support after launch?<span>+</span></summary>
+                        <p>Maintenance and further development can be discussed
+                        as part of the engagement, including updates,
+                        troubleshooting and planned improvements.</p>
+                    </details>
+
+                    <details>
+                        <summary>How do we get started?<span>+</span></summary>
+                        <p>Send a short description of your business challenge
+                        or idea using the contact form. The next step is to
+                        discuss the requirements and determine a suitable path.</p>
+                    </details>
+
+                </div>
             </div>
-
-
-            <div>
-
-                <span>
-                    03
-                </span>
-
-                <strong>
-                    Deliver exceptionally
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     NUMBERS
-========================================================= -->
-
-<section class="numbers section">
-
-    <div class="numbers-heading">
-
-        <span class="section-number">
-            BY THE NUMBERS
-        </span>
-
-        <h2>
-            Small details.
-            <span>
-                Big systems.
-            </span>
-        </h2>
-
-    </div>
-
-
-    <div class="numbers-grid">
-
-        <div>
-
-            <strong>
-                30+
-            </strong>
-
-            <span>
-                Products engineered
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong>
-                12+
-            </strong>
-
-            <span>
-                Business systems
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong>
-                98%
-            </strong>
-
-            <span>
-                Satisfaction target
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong>
-                24/7
-            </strong>
-
-            <span>
-                Digital infrastructure
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PROCESS
-========================================================= -->
-
-<section class="section process">
-
-    <div class="section-intro">
-
-        <div>
-
-            <span class="section-number">
-                06 / 10
-            </span>
-
-            <p class="section-label">
-                OUR PROCESS
-            </p>
-
-        </div>
-
-
-        <h2>
-
-            From idea to
-            <span>
-                production.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            Great software requires more than development.
-            It requires a disciplined process from the first
-            conversation to the final deployment.
-
-        </p>
-
-    </div>
-
-
-    <div class="process-timeline">
-
-
-        <article class="process-step">
-
-            <span class="step-number">
-                01
-            </span>
-
-            <div>
-
-                <h3>
-                    Discover
-                </h3>
-
-                <p>
-
-                    We understand the business,
-                    users, challenges and objectives.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="process-step">
-
-            <span class="step-number">
-                02
-            </span>
-
-            <div>
-
-                <h3>
-                    Define
-                </h3>
-
-                <p>
-
-                    Requirements, priorities and
-                    product direction become clear.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="process-step">
-
-            <span class="step-number">
-                03
-            </span>
-
-            <div>
-
-                <h3>
-                    Design
-                </h3>
-
-                <p>
-
-                    We create the architecture,
-                    interfaces and user experience.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="process-step">
-
-            <span class="step-number">
-                04
-            </span>
-
-            <div>
-
-                <h3>
-                    Engineer
-                </h3>
-
-                <p>
-
-                    Development turns the approved
-                    architecture into working software.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="process-step">
-
-            <span class="step-number">
-                05
-            </span>
-
-            <div>
-
-                <h3>
-                    Test
-                </h3>
-
-                <p>
-
-                    We test functionality, usability,
-                    reliability and performance.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="process-step">
-
-            <span class="step-number">
-                06
-            </span>
-
-            <div>
-
-                <h3>
-                    Launch
-                </h3>
-
-                <p>
-
-                    The product moves from development
-                    into real-world operation.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="process-step">
-
-            <span class="step-number">
-                07
-            </span>
-
-            <div>
-
-                <h3>
-                    Improve
-                </h3>
-
-                <p>
-
-                    We use feedback and data to continuously
-                    improve the product.
-
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     TECHNOLOGY
-========================================================= -->
-
-<section class="technology">
-
-    <div class="technology-content">
-
-        <span class="section-number">
-            07 / 10
-        </span>
-
-        <p class="section-label">
-            OUR TECHNOLOGY
-        </p>
-
-
-        <h2>
-
-            Built for
-
-            <span>
-                what's next.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            We use modern technologies and development
-            practices to create software that is ready
-            for today and prepared for tomorrow.
-
-        </p>
-
-    </div>
-
-
-    <div class="technology-grid">
-
-        <div>
-            HTML5
-        </div>
-
-        <div>
-            CSS3
-        </div>
-
-        <div>
-            JavaScript
-        </div>
-
-        <div>
-            TypeScript
-        </div>
-
-        <div>
-            React
-        </div>
-
-        <div>
-            Next.js
-        </div>
-
-        <div>
-            Python
-        </div>
-
-        <div>
-            Django
-        </div>
-
-        <div>
-            Node.js
-        </div>
-
-        <div>
-            PostgreSQL
-        </div>
-
-        <div>
-            MySQL
-        </div>
-
-        <div>
-            Git
-        </div>
-
-        <div>
-            REST API
-        </div>
-
-        <div>
-            Cloud
-        </div>
-
-        <div>
-            Linux
-        </div>
-
-        <div>
-            DevOps
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PRODUCT ARCHITECTURE
-========================================================= -->
-
-<section class="section architecture">
-
-    <div class="section-heading-centered">
-
-        <span class="section-number">
-            SYSTEM ARCHITECTURE
-        </span>
-
-        <h2>
-
-            From interface
-            <span>
-                to infrastructure.
-            </span>
-
-        </h2>
-
-    </div>
-
-
-    <div class="architecture-diagram">
-
-        <div class="architecture-layer">
-
-            <span>
-                01
-            </span>
-
-            <strong>
-                EXPERIENCE
-            </strong>
-
-            <p>
-                Websites • Dashboards • Mobile Interfaces
-            </p>
-
-        </div>
-
-
-        <div class="architecture-connector">
-            ↓
-        </div>
-
-
-        <div class="architecture-layer">
-
-            <span>
-                02
-            </span>
-
-            <strong>
-                APPLICATION
-            </strong>
-
-            <p>
-                Business Logic • Authentication • Workflows
-            </p>
-
-        </div>
-
-
-        <div class="architecture-connector">
-            ↓
-        </div>
-
-
-        <div class="architecture-layer">
-
-            <span>
-                03
-            </span>
-
-            <strong>
-                API
-            </strong>
-
-            <p>
-                REST APIs • Integrations • Services
-            </p>
-
-        </div>
-
-
-        <div class="architecture-connector">
-            ↓
-        </div>
-
-
-        <div class="architecture-layer">
-
-            <span>
-                04
-            </span>
-
-            <strong>
-                DATA
-            </strong>
-
-            <p>
-                Databases • Storage • Analytics
-            </p>
-
-        </div>
-
-
-        <div class="architecture-connector">
-            ↓
-        </div>
-
-
-        <div class="architecture-layer">
-
-            <span>
-                05
-            </span>
-
-            <strong>
-                INFRASTRUCTURE
-            </strong>
-
-            <p>
-                Cloud • Deployment • Monitoring
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     TESTIMONIALS
-========================================================= -->
-
-<section class="section testimonials">
-
-    <div class="section-intro">
-
-        <div>
-
-            <span class="section-number">
-                08 / 10
-            </span>
-
-            <p class="section-label">
-                CLIENT PERSPECTIVE
-            </p>
-
-        </div>
-
-
-        <h2>
-
-            Technology is about
-            <span>
-                people.
-            </span>
-
-        </h2>
-
-    </div>
-
-
-    <div class="testimonial-grid">
-
-
-        <article class="testimonial">
-
-            <div class="testimonial-mark">
-                “
-            </div>
-
-            <p>
-
-                Daniella Software Enterprises understood
-                the business problem before talking about
-                technology. That changed everything.
-
-            </p>
-
-            <div class="testimonial-author">
-
-                <span>
-                    AM
-                </span>
-
-                <div>
-
-                    <strong>
-                        Business Director
-                    </strong>
-
-                    <small>
-                        Enterprise Client
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+            <div class="container contact-inner">
+
+                <div class="contact-copy reveal">
+                    <span class="eyebrow">Let's create something meaningful</span>
+
+                    <h2>
+                        Your next big idea starts with
+                        <span>a conversation.</span>
+                    </h2>
+
+                    <p>
+                        Tell us what you're trying to build, what needs
+                        to work better or what opportunity you want to explore.
+                        Let's discuss a practical way forward.
+                    </p>
+
+                    <div class="contact-links">
+                        <a class="contact-link" href="mailto:hello@daniellasoftware.com">
+                            <svg class="icon"><use href="#i-mail"/></svg>
+                            hello@daniellasoftware.com
+                        </a>
+
+                        <div class="contact-link">
+                            <svg class="icon"><use href="#i-briefcase"/></svg>
+                            Nigeria · Working with digital-first businesses
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <h3>Tell us about your project</h3>
+                    <p>Complete the details below to prepare an email enquiry.</p>
+
+                    <div class="form-field">
+                        <label for="name">Your name</label>
+                        <input id="name" name="name" type="text"
+                               placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email address</label>
+                        <input id="email" name="email" type="email"
+                               placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="service">What do you need?</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option>Custom software</option>
+                            <option>Web application</option>
+                            <option>Business management system</option>
+                            <option>SaaS platform</option>
+                            <option>Website development</option>
+                            <option>Existing software improvement</option>
+                            <option>Other project</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Project details</label>
+                        <textarea id="message" name="message"
+                                  placeholder="Tell us what you want to build..."
+                                  required></textarea>
+                    </div>
+
+                    <button class="button button-primary" type="submit">
+                        Prepare My Enquiry <span class="arrow">↗</span>
+                    </button>
+
+                    <small class="form-note">
+                        This form opens your email application. It does not
+                        transmit or store information on this website.
                     </small>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <a class="brand" href="#home">
+                        <span class="brand-mark">D<span>S</span></span>
+                        <span class="brand-name">
+                            DANIELLA
+                            <small>SOFTWARE ENTERPRISES</small>
+                        </span>
+                    </a>
+
+                    <p>Building purposeful digital products and business
+                    software for a more connected future.</p>
+
+                    <div class="footer-socials">
+                        <!-- Replace these # links with real company profiles. -->
+                        <a href="#contact" aria-label="LinkedIn">in</a>
+                        <a href="#contact" aria-label="GitHub">GH</a>
+                        <a href="#contact" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+
+                    <div>
+                        <h4>Explore</h4>
+                        <a href="#about">About us</a>
+                        <a href="#services">Solutions</a>
+                        <a href="#projects">Our work</a>
+                        <a href="#industries">Industries</a>
+                        <a href="#faq">FAQs</a>
+                    </div>
+
+                    <div>
+                        <h4>Solutions</h4>
+                        <a href="#services">Custom software</a>
+                        <a href="#services">Web applications</a>
+                        <a href="#services">Business systems</a>
+                        <a href="#services">SaaS platforms</a>
+                        <a href="#services">Integrations</a>
+                    </div>
+
+                    <div>
+                        <h4>Connect</h4>
+                        <a href="mailto:hello@daniellasoftware.com">Email us</a>
+                        <a href="#contact">Start a project</a>
+                        <a href="#contact">Discuss an idea</a>
+                        <a href="#contact">Request a consultation</a>
+                    </div>
 
                 </div>
 
             </div>
 
-        </article>
-
-
-
-        <article class="testimonial">
-
-            <div class="testimonial-mark">
-                “
-            </div>
-
-            <p>
-
-                The team approached the project with
-                structure, creativity and a genuine focus
-                on building something useful.
-
-            </p>
-
-            <div class="testimonial-author">
-
-                <span>
-                    JD
-                </span>
-
-                <div>
-
-                    <strong>
-                        Product Founder
-                    </strong>
-
-                    <small>
-                        Digital Product Client
-                    </small>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="testimonial">
-
-            <div class="testimonial-mark">
-                “
-            </div>
-
-            <p>
-
-                What started as an idea became a real
-                digital system with a clear foundation
-                for future growth.
-
-            </p>
-
-            <div class="testimonial-author">
-
-                <span>
-                    RK
-                </span>
-
-                <div>
-
-                    <strong>
-                        Operations Manager
-                    </strong>
-
-                    <small>
-                        Technology Client
-                    </small>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FAQ
-========================================================= -->
-
-<section class="section faq">
-
-    <div class="faq-heading">
-
-        <span class="section-number">
-            FREQUENT QUESTIONS
-        </span>
-
-        <h2>
-
-            Questions before
-            <span>
-                we build?
-            </span>
-
-        </h2>
-
-    </div>
-
-
-    <div class="faq-list">
-
-
-        <details>
-
-            <summary>
-
-                What type of software do you build?
-
-                <span>
-                    +
-                </span>
-
-            </summary>
-
-            <p>
-
-                We build custom web applications, business
-                systems, SaaS platforms, dashboards, APIs,
-                management platforms and digital products.
-
-            </p>
-
-        </details>
-
-
-        <details>
-
-            <summary>
-
-                Can you build an entire product from scratch?
-
-                <span>
-                    +
-                </span>
-
-            </summary>
-
-            <p>
-
-                Yes. A project can begin with an idea or
-                business problem and progress through
-                discovery, design, engineering, testing
-                and deployment.
-
-            </p>
-
-        </details>
-
-
-        <details>
-
-            <summary>
-
-                Do you work with existing systems?
-
-                <span>
-                    +
-                </span>
-
-            </summary>
-
-            <p>
-
-                Existing applications can be reviewed,
-                improved, integrated, redesigned or
-                extended depending on the requirements.
-
-            </p>
-
-        </details>
-
-
-        <details>
-
-            <summary>
-
-                Can you build software for Nigerian businesses?
-
-                <span>
-                    +
-                </span>
-
-            </summary>
-
-            <p>
-
-                Yes. Systems can be designed around local
-                business workflows, operational requirements,
-                currencies and organizational structures.
-
-            </p>
-
-        </details>
-
-
-        <details>
-
-            <summary>
-
-                How does a project begin?
-
-                <span>
-                    +
-                </span>
-
-            </summary>
-
-            <p>
-
-                The process begins with a conversation about
-                the problem, objectives, users and desired
-                outcome. From there, the appropriate scope
-                and development approach can be defined.
-
-            </p>
-
-        </details>
-
-
-        <details>
-
-            <summary>
-
-                Do you provide maintenance after launch?
-
-                <span>
-                    +
-                </span>
-
-            </summary>
-
-            <p>
-
-                Ongoing maintenance, improvements, monitoring
-                and additional development can be part of
-                the long-term product relationship.
-
-            </p>
-
-        </details>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     INSIGHTS
-========================================================= -->
-
-<section class="section insights">
-
-    <div class="insights-heading">
-
-        <div>
-
-            <span class="section-number">
-                IDEAS & INSIGHTS
-            </span>
-
-            <h2>
-
-                Thinking beyond
-                <span>
-                    the code.
-                </span>
-
-            </h2>
-
-        </div>
-
-
-        <a href="#">
-            View all insights →
-        </a>
-
-    </div>
-
-
-    <div class="insights-grid">
-
-
-        <article class="insight-card">
-
-            <div class="insight-image insight-one">
-
-                <span>
-                    TECHNOLOGY
-                </span>
-
-            </div>
-
-            <div class="insight-content">
-
-                <small>
-                    01 / SOFTWARE
-                </small>
-
-                <h3>
-                    Why businesses need systems,
-                    not just websites.
-                </h3>
-
-                <p>
-
-                    Exploring the difference between
-                    a digital presence and digital
-                    infrastructure.
-
-                </p>
-
-                <a href="#">
-                    Read article →
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="insight-card">
-
-            <div class="insight-image insight-two">
-
-                <span>
-                    PRODUCT
-                </span>
-
-            </div>
-
-            <div class="insight-content">
-
-                <small>
-                    02 / PRODUCT
-                </small>
-
-                <h3>
-                    Turning an idea into a
-                    real digital product.
-                </h3>
-
-                <p>
-
-                    The journey from concept,
-                    validation and architecture
-                    to launch.
-
-                </p>
-
-                <a href="#">
-                    Read article →
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="insight-card">
-
-            <div class="insight-image insight-three">
-
-                <span>
-                    BUSINESS
-                </span>
-
-            </div>
-
-            <div class="insight-content">
-
-                <small>
-                    03 / BUSINESS
-                </small>
-
-                <h3>
-                    When should a business
-                    automate its operations?
-                </h3>
-
-                <p>
-
-                    Identifying repetitive workflows
-                    that technology can transform.
-
-                </p>
-
-                <a href="#">
-                    Read article →
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CTA
-========================================================= -->
-
-<section
-    class="contact"
-    id="contact"
->
-
-    <div class="contact-decoration">
-        DS
-    </div>
-
-
-    <div class="contact-grid"></div>
-
-
-    <div class="contact-content">
-
-        <p class="section-label">
-            LET'S CREATE
-        </p>
-
-
-        <h2>
-
-            Have an idea?
-
-            <em>
-                Let's build it.
-            </em>
-
-        </h2>
-
-
-        <p>
-
-            Tell us about your project, your challenge
-            or simply the idea you've been thinking about.
-
-            We'll explore what it could become.
-
-        </p>
-
-
-        <div class="contact-actions">
-
-            <a
-                href="mailto:hello@daniellasoftware.com"
-                class="contact-button"
-            >
-
-                hello@daniellasoftware.com
-
-                <span>
-                    ↗
-                </span>
-
-            </a>
-
-
-            <a
-                href="#home"
-                class="contact-secondary"
-            >
-
-                Back to top
-
-                <span>
-                    ↑
-                </span>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FINAL BRAND STATEMENT
-========================================================= -->
-
-<section class="final-statement">
-
-    <div>
-
-        <span>
-            DANIELLA SOFTWARE ENTERPRISES
-        </span>
-
-        <h2>
-
-            Software is not
-            <span>
-                the destination.
-            </span>
-
-            It's the infrastructure
-            for what's next.
-
-        </h2>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="footer">
-
-
-    <div class="footer-top">
-
-
-        <div class="footer-brand">
-
-            <a
-                href="#home"
-                class="brand"
-            >
-
-                <span class="brand-symbol">
-                    DS
-                </span>
-
-                <span class="brand-name">
-
-                    DANIELLA
-
-                    <small>
-                        SOFTWARE ENTERPRISES
-                    </small>
-
-                </span>
-
-            </a>
-
-
-            <p>
-
-                Building software for
-                the future of business.
-
-            </p>
-
-
-            <div class="footer-socials">
-
-                <a href="#">
-                    LI
-                </a>
-
-                <a href="#">
-                    GH
-                </a>
-
-                <a href="#">
-                    IG
-                </a>
-
-                <a href="#">
-                    X
-                </a>
-
+            <div class="footer-bottom">
+                <span>© <span id="year">2026</span> Daniella Software Enterprises. All rights reserved.</span>
+                <span>Software · Innovation · Digital</span>
+                <a href="#home">Back to top ↑</a>
             </div>
 
         </div>
-
-
-
-        <div class="footer-links">
-
-
-            <div>
-
-                <h4>
-                    Explore
-                </h4>
-
-                <a href="#home">
-                    Home
-                </a>
-
-                <a href="#solutions">
-                    Solutions
-                </a>
-
-                <a href="#projects">
-                    Projects
-                </a>
-
-                <a href="#industries">
-                    Industries
-                </a>
-
-                <a href="#company">
-                    Company
-                </a>
-
-            </div>
-
-
-
-            <div>
-
-                <h4>
-                    Services
-                </h4>
-
-                <a href="#solutions">
-                    Custom Software
-                </a>
-
-                <a href="#solutions">
-                    Digital Products
-                </a>
-
-                <a href="#solutions">
-                    Business Systems
-                </a>
-
-                <a href="#solutions">
-                    SaaS Platforms
-                </a>
-
-                <a href="#solutions">
-                    Cloud Solutions
-                </a>
-
-            </div>
-
-
-
-            <div>
-
-                <h4>
-                    Connect
-                </h4>
-
-                <a href="#">
-                    LinkedIn
-                </a>
-
-                <a href="#">
-                    GitHub
-                </a>
-
-                <a href="#">
-                    Instagram
-                </a>
-
-                <a href="#">
-                    X / Twitter
-                </a>
-
-                <a href="mailto:hello@daniellasoftware.com">
-                    Email
-                </a>
-
-            </div>
-
-
-
-            <div>
-
-                <h4>
-                    Start
-                </h4>
-
-                <a href="#contact">
-                    Start a Project
-                </a>
-
-                <a href="#contact">
-                    Request Consultation
-                </a>
-
-                <a href="#contact">
-                    Discuss an Idea
-                </a>
-
-                <a href="#contact">
-                    Build a Platform
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="footer-middle">
-
-        <div>
-
-            <span class="footer-label">
-                LOCATION
-            </span>
-
-            <strong>
-                Nigeria
-            </strong>
-
-        </div>
-
-
-        <div>
-
-            <span class="footer-label">
-                EMAIL
-            </span>
-
-            <a href="mailto:hello@daniellasoftware.com">
-                hello@daniellasoftware.com
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <span class="footer-label">
-                AVAILABILITY
-            </span>
-
-            <strong>
-                Open for selected projects
-            </strong>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="footer-bottom">
-
-        <span>
-
-            © 2026 Daniella Software Enterprises.
-            All rights reserved.
-
-        </span>
-
-
-        <span>
-
-            Software • Innovation • Digital
-
-        </span>
-
-
-        <a href="#home">
-
-            Back to top ↑
-
-        </a>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-    const menuButton =
-        document.querySelector(".menu-button");
-
-    const navbar =
-        document.querySelector(".nav-links");
-
-
-    if (menuButton && navbar) {
-
-        menuButton.addEventListener(
-            "click",
-            () => {
-
-                navbar.classList.toggle("active");
-
+    </footer>
+
+    <script>
+        // Enable reveal effects only when JavaScript is available.
+        document.documentElement.classList.add("js-ready");
+
+        // Responsive navigation.
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        function closeMenu() {
+            navLinks.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation");
+            document.body.classList.remove("menu-open");
+        }
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+
+            document.body.classList.toggle("menu-open", isOpen);
+            menuButton.textContent = isOpen ? "×" : "☰";
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeMenu();
             }
+        });
+
+        document.addEventListener("click", event => {
+            if (
+                navLinks.classList.contains("open") &&
+                !navLinks.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        });
+
+        // Keep the menu closed when switching to desktop width.
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 820) {
+                closeMenu();
+            }
+        });
+
+        // Smooth scrolling for existing in-page links.
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", event => {
+                const id = anchor.getAttribute("href");
+                const target = document.getElementById(id.slice(1));
+
+                if (target) {
+                    event.preventDefault();
+                    target.scrollIntoView({
+                        behavior: window.matchMedia(
+                            "(prefers-reduced-motion: reduce)"
+                        ).matches ? "auto" : "smooth",
+                        block: "start"
+                    });
+
+                    history.replaceState(null, "", id);
+                }
+            });
+        });
+
+        // Reveal content as it enters the viewport.
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+        } else {
+            revealElements.forEach(element => {
+                element.classList.add("visible");
+            });
+        }
+
+        // Highlight the navigation link for the current section.
+        const sections = document.querySelectorAll(
+            "main section[id]"
         );
 
-    }
+        if ("IntersectionObserver" in window) {
+            const sectionObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentId = entry.target.id;
 
+                        navLinks.querySelectorAll("a").forEach(link => {
+                            const active = link.getAttribute("href") === "#" + currentId;
+                            link.classList.toggle("active", active);
 
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    navbar.classList.remove("active");
-
-                }
-            );
-
-        });
-
-
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(anchor => {
-
-            anchor.addEventListener(
-                "click",
-                function (event) {
-
-                    const target =
-                        document.querySelector(
-                            this.getAttribute("href")
-                        );
-
-                    if (target) {
-
-                        event.preventDefault();
-
-                        target.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
+                            if (active) {
+                                link.setAttribute("aria-current", "location");
+                            } else {
+                                link.removeAttribute("aria-current");
+                            }
                         });
-
                     }
+                });
+            }, {
+                rootMargin: "-25% 0px -65% 0px"
+            });
 
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        }
+
+        // Accessible FAQ accordion: keep only one answer open at a time.
+        const faqItems = document.querySelectorAll(".faq-list details");
+
+        faqItems.forEach(item => {
+            item.addEventListener("toggle", () => {
+                if (item.open) {
+                    faqItems.forEach(other => {
+                        if (other !== item) {
+                            other.open = false;
+                        }
+                    });
                 }
-            );
-
+            });
         });
 
+        // Prepare an email enquiry.
+        // This uses the visitor's own email application; no backend is implied.
+        const contactForm = document.getElementById("contactForm");
 
-    window.addEventListener(
-        "load",
-        () => {
+        contactForm.addEventListener("submit", event => {
+            event.preventDefault();
 
-            document.body.classList.add(
-                "page-loaded"
+            if (!contactForm.reportValidity()) {
+                return;
+            }
+
+            const formData = new FormData(contactForm);
+
+            const name = formData.get("name").trim();
+            const email = formData.get("email").trim();
+            const service = formData.get("service");
+            const message = formData.get("message").trim();
+
+            const subject = encodeURIComponent(
+                "Project enquiry — " + service
             );
 
-        }
-    );
+            const body = encodeURIComponent(
+                "Hello Daniella Software Enterprises,\n\n" +
+                "My name is " + name + ".\n" +
+                "My email: " + email + "\n" +
+                "Service: " + service + "\n\n" +
+                "Project details:\n" + message + "\n\n" +
+                "I look forward to hearing from you."
+            );
 
-</script>
+            window.location.href =
+                "mailto:hello@daniellasoftware.com" +
+                "?subject=" + subject +
+                "&body=" + body;
+        });
 
+        // Automatically update the copyright year.
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
-
 </html>
